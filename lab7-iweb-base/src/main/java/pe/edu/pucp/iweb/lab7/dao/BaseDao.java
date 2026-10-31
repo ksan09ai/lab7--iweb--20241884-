@@ -1,6 +1,7 @@
 package pe.edu.pucp.iweb.lab7.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
@@ -10,14 +11,29 @@ import java.sql.SQLException;
  *  - SedeDao y EquipoDao deben heredar de ella y obtener la conexión
  *    únicamente con getConnection().
  */
-public class BaseDao { // TODO 2a: convertir en clase abstracta
 
-    private static final String URL = "jdbc:mysql://localhost:3306/telecom_andina";
-    private static final String USER = "root";
-    private static final String PASS = "root"; // cambiar por la contraseña de su MySQL
 
-    public Connection getConnection() throws SQLException {
-        // TODO 2a: cargar el driver (com.mysql.cj.jdbc.Driver) y retornar la conexión
-        throw new UnsupportedOperationException("getConnection() aún no implementado");
+public abstract class BaseDao {
+
+    protected Connection getConnection() {
+
+        Connection conexion = null;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = "jdbc:mysql://localhost:3306/telecom_andina";
+            String user = "root";
+            String password = "12345678.";
+
+            conexion = DriverManager.getConnection(url, user, password);
+        } catch (SQLException e){
+            System.out.println("Error al conectar con la base de datos" + e.getMessage());
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return conexion;
     }
+
 }
+

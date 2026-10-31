@@ -9,10 +9,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // Clases de OpenPDF que necesitará en el Ejercicio 4 (paquete com.lowagie.text):
-// import com.lowagie.text.Document;
-// import com.lowagie.text.Paragraph;
-// import com.lowagie.text.pdf.PdfPTable;
-// import com.lowagie.text.pdf.PdfWriter;
+import com.lowagie.text.Document;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
 
 @WebServlet(name = "EquipoServlet", urlPatterns = {"/equipos"})
 public class EquipoServlet extends HttpServlet {
