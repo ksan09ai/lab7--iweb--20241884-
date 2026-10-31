@@ -8,6 +8,10 @@ package pe.edu.pucp.iweb.lab7.beans;
 public class EquipoAP extends EquipoRed { // TODO 2b: debe heredar de EquipoRed
 
 
+    public EquipoAP(int idEquipo, String modelo, String tipo, double precio, int cantidad, Sede sede) {
+        super(idEquipo, modelo, tipo, precio, cantidad, sede);
+    }
+
     @Override
     public double calcularSoporteMensual() {
         double soporte = (0.02*getPrecio() + 5) * getPrecio();

@@ -5,7 +5,13 @@ package pe.edu.pucp.iweb.lab7.beans;
  *
  * Soporte mensual (S/) = 0.015 x precio x cantidad
  */
-public class EquipoSwitch extends EquipoRed{ // TODO 2b: debe heredar de EquipoRed
+public class EquipoSwitch extends EquipoRed{
+    public EquipoSwitch(int idEquipo, String modelo, String tipo, double precio, int cantidad, Sede sede) {
+        super(idEquipo, modelo, tipo, precio, cantidad, sede);
+    }
+
+
+    // TODO 2b: debe heredar de EquipoRed
 
 
     @Override

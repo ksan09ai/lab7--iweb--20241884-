@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import pe.edu.pucp.iweb.lab7.beans.EquipoAP;
 import pe.edu.pucp.iweb.lab7.beans.EquipoRed;
+import pe.edu.pucp.iweb.lab7.beans.EquipoSwitch;
+import pe.edu.pucp.iweb.lab7.beans.Sede;
 
 public class EquipoDao extends BaseDao { // TODO 2a: debe heredar de BaseDao
 
@@ -51,7 +54,17 @@ public class EquipoDao extends BaseDao { // TODO 2a: debe heredar de BaseDao
                 double precio = rs.getDouble("precio");
                 int cantidad = rs.getInt("cantidad");
 
-                
+
+                Sede sede = new Sede(idSede,nombreSede);
+
+                if (tipo == "SWITCH") {
+                    EquipoSwitch equipoSwitch = new EquipoSwitch(idequipo,modelo,tipo,precio,cantidad,sede);
+                } else if (tipo == "AP") {
+                    EquipoAP equipoAP = new EquipoAP(idequipo,modelo,tipo,precio,cantidad,sede);
+                }
+
+
+
 
 
 

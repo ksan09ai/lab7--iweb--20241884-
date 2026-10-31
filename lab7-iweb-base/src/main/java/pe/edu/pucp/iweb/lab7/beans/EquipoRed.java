@@ -20,6 +20,16 @@ public abstract class EquipoRed { // TODO 2b: convertir en clase abstracta
 
     // TODO 2b: declarar aquí el método abstracto calcularSoporteMensual()
 
+
+    public EquipoRed(int idEquipo, String modelo, String tipo, double precio, int cantidad, Sede sede) {
+        this.idEquipo = idEquipo;
+        this.modelo = modelo;
+        this.tipo = tipo;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.sede = sede;
+    }
+
     public int getIdEquipo() {
         return idEquipo;
     }
