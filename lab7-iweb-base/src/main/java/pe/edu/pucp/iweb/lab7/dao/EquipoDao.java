@@ -43,6 +43,21 @@ public class EquipoDao extends BaseDao { // TODO 2a: debe heredar de BaseDao
 
             while(rs.next()){
 
+                int idsede = rs.getInt("idsede");
+                String nombreSede = rs.getString("nombre");
+                int idequipo = rs.getInt("idequipo");
+                String modelo = rs.getString("modelo");
+                String tipo = rs.getString("tipo");
+                double precio = rs.getDouble("precio");
+                int cantidad = rs.getInt("cantidad");
+
+                
+
+
+
+
+
+
 
             }
 
