@@ -59,25 +59,17 @@ public class EquipoDao extends BaseDao { // TODO 2a: debe heredar de BaseDao
 
                 if (tipo == "SWITCH") {
                     EquipoSwitch equipoSwitch = new EquipoSwitch(idequipo,modelo,tipo,precio,cantidad,sede);
+                    lista.add(equipoSwitch);
                 } else if (tipo == "AP") {
                     EquipoAP equipoAP = new EquipoAP(idequipo,modelo,tipo,precio,cantidad,sede);
+                    lista.add(equipoAP);
                 }
-
-
-
-
-
-
-
-
-
 
             }
 
         } catch (SQLException e) {
             System.out.println("Error al conectar con la base de datos" + e.getMessage());
         }
-
 
 
         return lista;
